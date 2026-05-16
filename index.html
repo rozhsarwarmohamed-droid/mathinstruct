@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Assessment Guide — Reading &amp; Writing Time</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #FFF8F0; font-family: 'Nunito', sans-serif; color: #2D2D2D; min-height: 100vh; }
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 40px 24px 70px; }
+
+.hero {
+  background: linear-gradient(135deg, #FFE066 0%, #FFB347 45%, #FF6B9D 100%);
+  border-radius: 28px; padding: 36px 40px 32px; margin-bottom: 30px;
+  position: relative; overflow: hidden;
+}
+.hero-b1 { position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,0.16);border-radius:50%; }
+.hero-b2 { position:absolute;bottom:-40px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,0.12);border-radius:50%; }
+.hero-deco { position:absolute;top:18px;right:36px;font-size:40px;opacity:0.4;user-select:none;letter-spacing:4px; }
+.hero-badge {
+  display:inline-block;background:rgba(255,255,255,0.32);color:#7A3500;
+  font-weight:800;font-size:13px;letter-spacing:0.07em;text-transform:uppercase;
+  padding:5px 16px;border-radius:999px;margin-bottom:14px;
+}
+.hero h1 { font-family:'Fredoka One',cursive;font-size:46px;line-height:1.1;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.12);margin-bottom:12px; }
+.hero p { font-size:16px;color:rgba(255,255,255,0.93);line-height:1.65;max-width:540px;font-weight:600; }
+
+.intro-box {
+  background:#fff;border:2.5px solid #FFD166;border-radius:20px;
+  padding:20px 26px;margin-bottom:34px;display:flex;gap:14px;align-items:flex-start;
+}
+.intro-icon { font-size:28px;flex-shrink:0;margin-top:2px; }
+.intro-box p { font-size:15.5px;line-height:1.7;color:#444; }
+.intro-box strong { color:#C85000; }
+
+.section-label { font-family:'Fredoka One',cursive;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;color:#999; }
+
+.card { border-radius:24px;padding:28px 32px 30px;margin-bottom:26px;position:relative;overflow:hidden; }
+.card-num { position:absolute;top:16px;right:26px;font-family:'Fredoka One',cursive;font-size:80px;line-height:1;opacity:0.08;user-select:none; }
+.card-header { display:flex;align-items:center;gap:14px;margin-bottom:14px; }
+.card-icon-wrap { width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0; }
+.card h2 { font-family:'Fredoka One',cursive;font-size:22px;line-height:1.25; }
+.card-desc { font-size:15px;line-height:1.68;margin-bottom:20px;opacity:0.82;font-weight:600; }
+
+.examples { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.ex-box { background:rgba(255,255,255,0.6);border-radius:16px;padding:18px 20px; }
+.ex-label { font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;opacity:0.55; }
+.ex-question { font-family:'Fredoka One',cursive;font-size:20px;margin-bottom:10px; }
+.ex-arrow { font-size:15px;margin-bottom:6px;opacity:0.5; }
+.ex-answer { font-size:16px;font-weight:700; }
+.ex-answer-alt { font-size:13px;font-weight:600;opacity:0.6;margin-top:3px; }
+
+.digital-clock {
+  display:inline-block;background:#0F172A;color:#34EFB8;
+  font-family:'Courier New',monospace;font-size:26px;font-weight:700;
+  padding:8px 18px;border-radius:10px;letter-spacing:4px;margin-bottom:8px;
+}
+
+.clock-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.clock-box { background:rgba(255,255,255,0.6);border-radius:16px;padding:16px 18px;text-align:center; }
+.clock-box .ex-label { text-align:left; }
+.clock-box svg { display:block;margin:8px auto; }
+
+.card-blue   { background:linear-gradient(135deg,#E0F4FF,#BAE6FD);color:#0C4A6E; }
+.card-blue .card-icon-wrap { background:#38BDF8; } .card-blue h2 { color:#0C4A6E; }
+.card-green  { background:linear-gradient(135deg,#DCFCE7,#BBF7D0);color:#14532D; }
+.card-green .card-icon-wrap { background:#4ADE80; } .card-green h2 { color:#14532D; }
+.card-orange { background:linear-gradient(135deg,#FFF7ED,#FED7AA);color:#7C2D12; }
+.card-orange .card-icon-wrap { background:#FB923C; } .card-orange h2 { color:#7C2D12; }
+.card-purple { background:linear-gradient(135deg,#F3E8FF,#DDD6FE);color:#3B0764; }
+.card-purple .card-icon-wrap { background:#C084FC; } .card-purple h2 { color:#3B0764; }
+.card-pink   { background:linear-gradient(135deg,#FDF2F8,#FBCFE8);color:#831843; }
+.card-pink .card-icon-wrap { background:#F472B6; } .card-pink h2 { color:#831843; }
+
+.match-wrap { background:rgba(255,255,255,0.55);border-radius:16px;padding:20px 22px; }
+.match-desc { font-size:14px;font-weight:700;color:#831843;margin-bottom:16px;opacity:0.75; }
+.match-layout { display:grid;grid-template-columns:150px 1fr 150px;gap:0;align-items:stretch; }
+.match-col { display:flex;flex-direction:column;gap:16px;justify-content:space-around; }
+.match-digital { background:rgba(255,255,255,0.75);border-radius:12px;padding:10px 14px;font-family:'Fredoka One',cursive;font-size:18px;text-align:center;color:#831843; }
+.match-clock-item { display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.75);border-radius:12px;padding:8px; }
+.match-lines-col { display:flex;align-items:center;justify-content:center; }
+.match-hint { font-size:13px;font-weight:700;text-align:center;margin-top:14px;opacity:0.6;color:#831843; }
+
+.tips-box { background:linear-gradient(135deg,#FFF0F9,#F0ECFF);border:2.5px dashed #E879F9;border-radius:22px;padding:26px 32px;margin-top:36px; }
+.tips-box h3 { font-family:'Fredoka One',cursive;font-size:22px;color:#7E22CE;margin-bottom:16px;display:flex;align-items:center;gap:10px; }
+.tips-list { list-style:none;display:flex;flex-direction:column;gap:10px; }
+.tips-list li { font-size:15px;line-height:1.55;padding-left:26px;position:relative;color:#4B0082;font-weight:600; }
+.tips-list li::before { content:'✦';position:absolute;left:0;color:#C026D3;font-size:12px;top:3px; }
+
+.footer { text-align:center;margin-top:44px;font-size:14px;color:#888;font-weight:700; }
+.footer strong { color:#C85000; }
+
+/* ── Mobile ── */
+@media (max-width: 540px) {
+  .page-wrap { padding: 20px 14px 50px; }
+
+  /* Hero */
+  .hero { padding: 24px 20px 22px; border-radius: 20px; margin-bottom: 20px; }
+  .hero h1 { font-size: 30px; }
+  .hero p { font-size: 14px; }
+  .hero-badge { font-size: 11px; padding: 4px 12px; margin-bottom: 10px; }
+  .hero-deco { font-size: 26px; top: 12px; right: 18px; }
+  .hero-b1 { width: 100px; height: 100px; top: -20px; right: -20px; }
+  .hero-b2 { width: 80px; height: 80px; bottom: -25px; left: -15px; }
+
+  /* Intro */
+  .intro-box { padding: 14px 16px; gap: 10px; margin-bottom: 22px; }
+  .intro-icon { font-size: 22px; }
+  .intro-box p { font-size: 14px; }
+
+  /* Cards */
+  .card { padding: 20px 18px 22px; border-radius: 18px; margin-bottom: 18px; }
+  .card-num { font-size: 56px; top: 10px; right: 16px; }
+  .card-header { gap: 10px; margin-bottom: 10px; }
+  .card-icon-wrap { width: 42px; height: 42px; border-radius: 12px; font-size: 20px; }
+  .card h2 { font-size: 18px; }
+  .card-desc { font-size: 14px; margin-bottom: 14px; }
+
+  /* Example grids → single column */
+  .examples { grid-template-columns: 1fr; gap: 10px; }
+  .clock-grid { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Example boxes */
+  .ex-box { padding: 14px 16px; }
+  .ex-question { font-size: 17px; }
+  .ex-answer { font-size: 14px; }
+  .digital-clock { font-size: 22px; letter-spacing: 3px; padding: 6px 14px; }
+
+  /* Clock boxes */
+  .clock-box { padding: 12px 14px; }
+  .clock-box svg { width: 130px; height: 130px; }
+
+  /* Matching section — hide the SVG lines, show as 2-col pairs */
+  .match-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .match-lines-col { display: none; }
+  .match-wrap { padding: 14px 14px; }
+  .match-desc { font-size: 13px; margin-bottom: 12px; }
+  .match-digital { font-size: 15px; padding: 8px 10px; border-radius: 10px; }
+  .match-clock-item svg { width: 70px; height: 70px; }
+  .match-col { gap: 12px; }
+
+  /* Tips */
+  .tips-box { padding: 18px 18px; border-radius: 18px; margin-top: 24px; }
+  .tips-box h3 { font-size: 18px; }
+  .tips-list li { font-size: 14px; }
+
+  .section-label { font-size: 11px; margin-bottom: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-b1"></div>
+  <div class="hero-b2"></div>
+  <div class="hero-deco">&#11088;&#127775;&#11088;</div>
+  <div class="hero-badge">&#128218; Dear Parents</div>
+  <h1>Math Assessment<br>on Monday &#8212; Time!</h1>
+</div>
+
+<!-- INTRO -->
+<div class="intro-box">
+  <div class="intro-icon">&#128161;</div>
+  <p>Below is a breakdown of <strong>every question type</strong> on Monday's test, with practice examples and answers.</p>
+</div>
+
+<div class="section-label">5 Question Types on the Test</div>
+
+<!-- CARD 1 -->
+<div class="card card-blue">
+  <div class="card-num">1</div>
+  <div class="card-header">
+    <div class="card-icon-wrap">&#128290;</div>
+    <h2>Writing Digital Time in Words</h2>
+  </div>
+  <p class="card-desc">Students see a digital clock and write the time using words.</p>
+  <div class="examples">
+    <div class="ex-box">
+      <div class="ex-label">Practice Example</div>
+      <div class="digital-clock">04:30</div>
+      <div class="ex-arrow">&#8595; answer</div>
+      <div class="ex-answer">four thirty</div>
+      <div class="ex-answer-alt">or: half past four</div>
+    </div>
+    <div class="ex-box">
+      <div class="ex-label">Practice Example</div>
+      <div class="digital-clock">12:18</div>
+      <div class="ex-arrow">&#8595; answer</div>
+      <div class="ex-answer">twelve eighteen</div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card card-green">
+  <div class="card-num">2</div>
+  <div class="card-header">
+    <div class="card-icon-wrap">&#9997;&#65039;</div>
+    <h2>Writing Words in Digital Time</h2>
+  </div>
+  <p class="card-desc">Students read the time written in words and write it back as numbers.</p>
+  <div class="examples">
+    <div class="ex-box">
+      <div class="ex-label">Practice Example</div>
+      <div class="ex-question">&#8220;five fifteen&#8221;</div>
+      <div class="ex-arrow">&#8595; answer</div>
+      <div class="digital-clock">05:15</div>
+    </div>
+    <div class="ex-box">
+      <div class="ex-label">Practice Example</div>
+      <div class="ex-question">&#8220;ten minutes past eight&#8221;</div>
+      <div class="ex-arrow">&#8595; answer</div>
+      <div class="digital-clock">08:10</div>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card card-orange">
+  <div class="card-num">3</div>
+  <div class="card-header">
+    <div class="card-icon-wrap">&#128338;</div>
+    <h2>Reading Analogue Clocks</h2>
+  </div>
+  <p class="card-desc">Students look at a traditional clock face and write the correct time. Tip: the <strong>short fat hand</strong> = hours, the <strong>long thin hand</strong> = minutes.</p>
+  <div class="clock-grid">
+
+    <!-- Clock 02:05 -->
+    <!-- Numbers fixed: r=52, centre=(72,72). x=72+52*sin(h*30°), y=72-52*cos(h*30°) -->
+    <div class="clock-box">
+      <div class="ex-label">Hour hand &#8594; 2 &nbsp;|&nbsp; Minute hand &#8594; 1</div>
+      <svg width="145" height="145" viewBox="0 0 145 145" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="72" cy="72" r="64" fill="#fff" stroke="#FB923C" stroke-width="4.5"/>
+        <g font-family="'Fredoka One',cursive" font-size="13" fill="#7C2D12" text-anchor="middle" dominant-baseline="central">
+          <text x="72"  y="20">12</text><text x="98"  y="27">1</text>
+          <text x="117" y="46">2</text> <text x="124" y="72">3</text>
+          <text x="117" y="98">4</text> <text x="98"  y="117">5</text>
+          <text x="72"  y="124">6</text><text x="46"  y="117">7</text>
+          <text x="27"  y="98">8</text> <text x="20"  y="72">9</text>
+          <text x="27"  y="46">10</text><text x="46"  y="27">11</text>
+        </g>
+        <!-- minute hand at 1 (30 deg): x=72+52*sin30=98, y=72-52*cos30=27 -->
+        <line x1="72" y1="72" x2="98" y2="27" stroke="#FB923C" stroke-width="3" stroke-linecap="round"/>
+        <!-- hour hand just past 2 (68 deg): x=72+36*sin68=105, y=72-36*cos68=59 -->
+        <line x1="72" y1="72" x2="105" y2="59" stroke="#7C2D12" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="72" cy="72" r="5.5" fill="#FB923C"/>
+        <text x="72" y="140" font-family="Nunito,sans-serif" font-size="8.5" fill="#F97316" font-weight="800" text-anchor="middle">LONG = minutes &nbsp;|&nbsp; SHORT = hours</text>
+      </svg>
+      <div style="font-family:'Fredoka One',cursive;font-size:22px;color:#7C2D12;margin-top:6px;">02:05</div>
+    </div>
+
+    <!-- Clock 09:45 -->
+    <div class="clock-box">
+      <div class="ex-label">Hour hand &#8594; near 10 &nbsp;|&nbsp; Minute hand &#8594; 9</div>
+      <svg width="145" height="145" viewBox="0 0 145 145" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="72" cy="72" r="64" fill="#fff" stroke="#FB923C" stroke-width="4.5"/>
+        <g font-family="'Fredoka One',cursive" font-size="13" fill="#7C2D12" text-anchor="middle" dominant-baseline="central">
+          <text x="72"  y="20">12</text><text x="98"  y="27">1</text>
+          <text x="117" y="46">2</text> <text x="124" y="72">3</text>
+          <text x="117" y="98">4</text> <text x="98"  y="117">5</text>
+          <text x="72"  y="124">6</text><text x="46"  y="117">7</text>
+          <text x="27"  y="98">8</text> <text x="20"  y="72">9</text>
+          <text x="27"  y="46">10</text><text x="46"  y="27">11</text>
+        </g>
+        <!-- minute hand at 9 (270 deg): x=72-52=20, y=72 -->
+        <line x1="72" y1="72" x2="20" y2="72" stroke="#FB923C" stroke-width="3" stroke-linecap="round"/>
+        <!-- hour at 9.75h = 292.5 deg: sin=-0.924,cos=0.383 => x=39, y=58 -->
+        <line x1="72" y1="72" x2="39" y2="58" stroke="#7C2D12" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="72" cy="72" r="5.5" fill="#FB923C"/>
+        <text x="72" y="140" font-family="Nunito,sans-serif" font-size="8.5" fill="#F97316" font-weight="800" text-anchor="middle">LONG = minutes &nbsp;|&nbsp; SHORT = hours</text>
+      </svg>
+      <div style="font-family:'Fredoka One',cursive;font-size:22px;color:#7C2D12;margin-top:6px;">09:45</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card card-purple">
+  <div class="card-num">4</div>
+  <div class="card-header">
+    <div class="card-icon-wrap">&#128394;&#65039;</div>
+    <h2>Drawing Clock Hands</h2>
+  </div>
+  <p class="card-desc">Students are given a digital time and must draw the <strong>short hour hand</strong> and <strong>long minute hand</strong> in the correct positions on an empty clock face.</p>
+  <div class="clock-grid">
+
+    <!-- Draw 09:45 -->
+    <!-- Numbers fixed: r=52, centre=(72,72) -->
+    <div class="clock-box">
+      <div class="ex-label">Given time &#8594; draw the hands</div>
+      <div class="digital-clock" style="margin-bottom:10px;">09:45</div>
+      <svg width="145" height="145" viewBox="0 0 145 145" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="72" cy="72" r="64" fill="#fff" stroke="#C084FC" stroke-width="4.5"/>
+        <g font-family="'Fredoka One',cursive" font-size="13" fill="#3B0764" text-anchor="middle" dominant-baseline="central">
+          <text x="72"  y="20">12</text><text x="98"  y="27">1</text>
+          <text x="117" y="46">2</text> <text x="124" y="72">3</text>
+          <text x="117" y="98">4</text> <text x="98"  y="117">5</text>
+          <text x="72"  y="124">6</text><text x="46"  y="117">7</text>
+          <text x="27"  y="98">8</text> <text x="20"  y="72">9</text>
+          <text x="27"  y="46">10</text><text x="46"  y="27">11</text>
+        </g>
+        <line x1="72" y1="72" x2="20" y2="72" stroke="#A855F7" stroke-width="3" stroke-linecap="round"/>
+        <line x1="72" y1="72" x2="39" y2="58" stroke="#3B0764" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="72" cy="72" r="5.5" fill="#A855F7"/>
+      </svg>
+      <div style="font-size:13px;font-weight:700;color:#6D28D9;margin-top:8px;line-height:1.5;">
+        Minute hand &#8594; pointing at <strong>9</strong><br>
+        Hour hand &#8594; close to <strong>10</strong>
+      </div>
+    </div>
+
+    <!-- Draw 03:15 -->
+    <div class="clock-box">
+      <div class="ex-label">Your turn &#8212; check after!</div>
+      <div class="digital-clock" style="margin-bottom:10px;">03:15</div>
+      <svg width="145" height="145" viewBox="0 0 145 145" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="72" cy="72" r="64" fill="#fff" stroke="#C084FC" stroke-width="4.5"/>
+        <g font-family="'Fredoka One',cursive" font-size="13" fill="#3B0764" text-anchor="middle" dominant-baseline="central">
+          <text x="72"  y="20">12</text><text x="98"  y="27">1</text>
+          <text x="117" y="46">2</text> <text x="124" y="72">3</text>
+          <text x="117" y="98">4</text> <text x="98"  y="117">5</text>
+          <text x="72"  y="124">6</text><text x="46"  y="117">7</text>
+          <text x="27"  y="98">8</text> <text x="20"  y="72">9</text>
+          <text x="27"  y="46">10</text><text x="46"  y="27">11</text>
+        </g>
+        <!-- minute at 3 (90 deg): x=72+52=124, y=72 -->
+        <line x1="72" y1="72" x2="124" y2="72" stroke="#A855F7" stroke-width="3" stroke-linecap="round"/>
+        <!-- hour at 3.25h = 97.5 deg: sin=0.991, cos=-0.131 => x=108, y=77 -->
+        <line x1="72" y1="72" x2="108" y2="77" stroke="#3B0764" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="72" cy="72" r="5.5" fill="#A855F7"/>
+      </svg>
+      <div style="font-size:13px;font-weight:700;color:#6D28D9;margin-top:8px;line-height:1.5;">
+        Minute hand &#8594; pointing at <strong>3</strong><br>
+        Hour hand &#8594; just past <strong>3</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card card-pink">
+  <div class="card-num">5</div>
+  <div class="card-header">
+    <div class="card-icon-wrap">&#128279;</div>
+    <h2>Matching Times</h2>
+  </div>
+  <p class="card-desc">Students draw lines to connect each analogue clock face with the correct digital time.</p>
+  <div class="match-wrap">
+    <div class="match-desc">Draw a line from each digital time to the matching clock face:</div>
+    <div class="match-layout">
+
+      <!-- Left: digital times -->
+      <div class="match-col">
+        <div class="match-digital">07:20</div>
+        <div class="match-digital">11:55</div>
+        <div class="match-digital">03:10</div>
+      </div>
+
+      <!-- Middle: answer lines -->
+      <div class="match-lines-col">
+        <svg viewBox="0 0 60 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:210px;">
+          <!-- 07:20 (top-left, y~35) matches clock-2 07:20 (middle-right, y~105) -->
+          <line x1="0" y1="35" x2="60" y2="105" stroke="#EC4899" stroke-width="2.5" stroke-dasharray="5,4" stroke-linecap="round"/>
+          <!-- 11:55 (mid-left, y~105) matches clock-3 11:55 (bottom-right, y~175) -->
+          <line x1="0" y1="105" x2="60" y2="175" stroke="#EC4899" stroke-width="2.5" stroke-dasharray="5,4" stroke-linecap="round"/>
+          <!-- 03:10 (bot-left, y~175) matches clock-1 03:10 (top-right, y~35) -->
+          <line x1="0" y1="175" x2="60" y2="35" stroke="#EC4899" stroke-width="2.5" stroke-dasharray="5,4" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Right: clock faces (shuffled: 03:10, 07:20, 11:55) -->
+      <!-- Numbers fixed: r=30, centre=(41,41). x=41+30*sin(h*30°), y=41-30*cos(h*30°) -->
+      <div class="match-col">
+
+        <!-- 03:10 -->
+        <div class="match-clock-item">
+          <svg width="82" height="82" viewBox="0 0 82 82" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="41" cy="41" r="37" fill="#fff" stroke="#F472B6" stroke-width="3"/>
+            <g font-family="'Fredoka One',cursive" font-size="8" fill="#831843" text-anchor="middle" dominant-baseline="central">
+              <text x="41" y="11">12</text><text x="56" y="15">1</text>
+              <text x="67" y="26">2</text> <text x="71" y="41">3</text>
+              <text x="67" y="56">4</text> <text x="56" y="67">5</text>
+              <text x="41" y="71">6</text> <text x="26" y="67">7</text>
+              <text x="15" y="56">8</text> <text x="11" y="41">9</text>
+              <text x="15" y="26">10</text><text x="26" y="15">11</text>
+            </g>
+            <!-- 03:10 minute at 2 (60 deg): x=41+30*sin60=67, y=41-30*cos60=26 -->
+            <line x1="41" y1="41" x2="67" y2="26" stroke="#F472B6" stroke-width="2" stroke-linecap="round"/>
+            <!-- hour at 3.17h=95 deg: sin=0.996,cos=-0.087 => x=62, y=43 -->
+            <line x1="41" y1="41" x2="62" y2="43" stroke="#831843" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="41" cy="41" r="3.5" fill="#F472B6"/>
+          </svg>
+          <div style="font-size:10px;font-weight:800;color:#831843;margin-top:4px;opacity:0.6;">03:10</div>
+        </div>
+
+        <!-- 07:20 -->
+        <div class="match-clock-item">
+          <svg width="82" height="82" viewBox="0 0 82 82" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="41" cy="41" r="37" fill="#fff" stroke="#F472B6" stroke-width="3"/>
+            <g font-family="'Fredoka One',cursive" font-size="8" fill="#831843" text-anchor="middle" dominant-baseline="central">
+              <text x="41" y="11">12</text><text x="56" y="15">1</text>
+              <text x="67" y="26">2</text> <text x="71" y="41">3</text>
+              <text x="67" y="56">4</text> <text x="56" y="67">5</text>
+              <text x="41" y="71">6</text> <text x="26" y="67">7</text>
+              <text x="15" y="56">8</text> <text x="11" y="41">9</text>
+              <text x="15" y="26">10</text><text x="26" y="15">11</text>
+            </g>
+            <!-- 07:20 minute at 4 (120 deg): x=41+30*sin120=67, y=41-30*cos120=56 -->
+            <line x1="41" y1="41" x2="67" y2="56" stroke="#F472B6" stroke-width="2" stroke-linecap="round"/>
+            <!-- hour at 7.33h=220 deg: sin=-0.643,cos=-0.766 => x=28, y=57 -->
+            <line x1="41" y1="41" x2="28" y2="57" stroke="#831843" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="41" cy="41" r="3.5" fill="#F472B6"/>
+          </svg>
+          <div style="font-size:10px;font-weight:800;color:#831843;margin-top:4px;opacity:0.6;">07:20</div>
+        </div>
+
+        <!-- 11:55 -->
+        <div class="match-clock-item">
+          <svg width="82" height="82" viewBox="0 0 82 82" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="41" cy="41" r="37" fill="#fff" stroke="#F472B6" stroke-width="3"/>
+            <g font-family="'Fredoka One',cursive" font-size="8" fill="#831843" text-anchor="middle" dominant-baseline="central">
+              <text x="41" y="11">12</text><text x="56" y="15">1</text>
+              <text x="67" y="26">2</text> <text x="71" y="41">3</text>
+              <text x="67" y="56">4</text> <text x="56" y="67">5</text>
+              <text x="41" y="71">6</text> <text x="26" y="67">7</text>
+              <text x="15" y="56">8</text> <text x="11" y="41">9</text>
+              <text x="15" y="26">10</text><text x="26" y="15">11</text>
+            </g>
+            <!-- 11:55 minute at 11 (330 deg): sin=-0.5,cos=0.866 => x=26, y=15 -->
+            <line x1="41" y1="41" x2="26" y2="15" stroke="#F472B6" stroke-width="2" stroke-linecap="round"/>
+            <!-- hour at 11.92h=357.5 deg: sin=-0.044,cos=0.999 => x=40, y=20 -->
+            <line x1="41" y1="41" x2="40" y2="20" stroke="#831843" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="41" cy="41" r="3.5" fill="#F472B6"/>
+          </svg>
+          <div style="font-size:10px;font-weight:800;color:#831843;margin-top:4px;opacity:0.6;">11:55</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-box">
+  <h3>&#127775; Quick Tips</h3>
+  <ul class="tips-list">
+    <li>For analogue clocks, remind them: the <strong>short hand</strong> tells us the hour, and the <strong>long hand</strong> tells us the minutes.</li>
+    <li>When writing digital time, always use a zero for single-digit hours &#8212; so &#8220;five past nine&#8221; is <strong>09:05</strong>, not 9:05.</li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p style="margin-top:10px;">Warm regards &#127822;</p>
+</div>
+
+</div>
+</body>
+</html>
